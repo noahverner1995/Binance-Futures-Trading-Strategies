@@ -1,0 +1,3 @@
+run cmd
+chrome.exe path: cd C:\Program Files\Google\Chrome\Application
+chrome devtools protocol: chrome.exe --remote-debugging-port=9222 --user-data-dir:"C:\Users\ResetStoreX\AppData\Local\Google\Chrome\User Data\Default"
