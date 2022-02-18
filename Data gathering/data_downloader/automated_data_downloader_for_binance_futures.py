@@ -14,12 +14,12 @@ from selenium.webdriver.common.by import By
 
 opt = Options() #the variable that will store the selenium options
 opt.add_experimental_option("debuggerAddress", "localhost:9222") #this allows bulk-dozer to take control of your Chrome Browser in DevTools mode.
-s = Service(r'C:\Users\ResetStoreX\AppData\Local\Programs\Python\Python39\Scripts\chromedriver.exe') #Use the chrome driver located at the corresponding path
+s = Service(r'your_chromedriver.exe_path') #Use the chrome driver located at the corresponding path
 driver = webdriver.Chrome(service=s, options=opt) #execute the chromedriver.exe with the previous conditions
 
 #Why using MarkPrices: https://support.btse.com/en/support/solutions/articles/43000557589-index-price-and-mark-price#:~:text=Index%20Price%20is%20an%20important,of%20cryptocurrencies%20on%20major%20exchanges.&text=Mark%20Price%20is%20the%20price,be%20fair%20and%20manipulation%20resistant.
 
-if driver.current_url == 'https://data.binance.vision/?prefix=data/futures/um/daily/markPriceKlines/ALICEUSDT/1h/' :   
+if driver.current_url == 'https://data.binance.vision/?prefix=data/futures/um/daily/markPriceKlines/ALICEUSDT/1h/' :  #ALICEUSDT is shown as a sample.
     number = 2 #initialize an int variable to 2 because the desired web elements in this page starts from 2
     counter = 0
     the_dictionary_links = {}
