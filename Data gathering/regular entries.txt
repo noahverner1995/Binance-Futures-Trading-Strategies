@@ -1,3 +1,0 @@
-run cmd
-chrome.exe path: cd your_chrome.exe_path
-chrome devtools protocol: chrome.exe --remote-debugging-port=9222 --user-data-dir:"your_chrome_user_data_dir_"
