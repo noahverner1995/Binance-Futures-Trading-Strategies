@@ -8,6 +8,6 @@ To do so, first read <a href="https://www.guidingtech.com/change-download-locati
 Then, before running the `automated_data_downloader_for_binance_futures.py` program, you will have to modifiy the following lines:
 
 * Line 17: change your_chromedriver.exe_path for literally your chromedriver.exe path, keep it inside the r'' btw.
-* Line 22: change https://data.binance.vision/?prefix=data/futures/um/daily/markPriceKlines/ALICEUSDT/1h/ for your desired pair with its respective timeframe.
+* Line 22: change https://data.binance.vision/?prefix=data/futures/um/daily/markPriceKlines/XRPUSDT/1h/ for your desired pair with its respective timeframe.
 
 *Note: You can get any markPriceklines for any available futures pair at https://data.binance.vision/?prefix=data/futures/um/daily/markPriceKlines/*
