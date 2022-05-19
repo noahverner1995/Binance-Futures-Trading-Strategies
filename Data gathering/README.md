@@ -2,7 +2,7 @@
 
 This is the very beginning of backtest. 
 
-This part focuses on OHLC price data gathering for a specific trading pair, there are a lot of data services that sell what is needed, but for this particular project such data will be free to download using `Python3.x` `Selenium4.1.0` `NumPy1.21.1`
+This part focuses on OHLC price data gathering for a specific trading pair, there are a lot of data services that sell what is needed, but for this particular project such data will be free to download using `Python3.x` `Selenium4.1.0`
 
 # Procedure
 
