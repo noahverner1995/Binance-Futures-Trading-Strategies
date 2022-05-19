@@ -24,7 +24,7 @@ if driver.current_url == 'https://data.binance.vision/?prefix=data/futures/um/da
     start_date = date(2022, 1, 2)
     end_date = date(2022, 2, 13)
     delta = timedelta(days=1)
-    
+       
     #iterate over the dates
     while start_date <= end_date:
         
@@ -33,15 +33,14 @@ if driver.current_url == 'https://data.binance.vision/?prefix=data/futures/um/da
         filename = "XRPUSDT"+"-"+"1h"+"-"+date_string+".zip"
         
         #create a download link for this particular page
-        download_link = driver.current_url+filename
+        download_link = 'https://data.binance.vision/data/futures/um/daily/markPriceKlines/XRPUSDT/1h/'+filename
         
         #go to the download link
         driver.get(download_link)
         
         #print what's being downloaded and wait 2 seconds before repeating the process with the next date
         print(f'Downloading {filename}')
-        time.sleep(2)
+        time.sleep(2.5)
         
         #count it
         start_date += delta
-        
