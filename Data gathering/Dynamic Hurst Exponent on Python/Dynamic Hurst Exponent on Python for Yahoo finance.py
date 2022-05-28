@@ -22,7 +22,6 @@ end = "2021-06-16"
 
 #downloading data
 raw_data = yf.download(ticker, start, end)['Close']
-prices = np.array(raw_data)[1:]
 returns = np.array(raw_data)[1:]/np.array(raw_data)[:-1]-1
 
 #initializing arrays
@@ -88,3 +87,9 @@ plt.rc('xtick', labelsize = 8)
 plt.plot(raw_data.index[n:], pvalues)
 plt.plot(raw_data.index[n:], np.ones(len(pvalues))*0.05) #reject h0 if pvalue is less than 0.05
 plt.plot(raw_data.index[n:], np.ones(len(pvalues))*0.001) #reject h0 because either a highly rare data result has been observed, or the null hypothesis is incorrect.
+
+#visualising the price
+plt.figure(4)
+plt.title('S&P500 Price')
+plt.rc('xtick', labelsize = 8)
+plt.plot(raw_data.index[n:], raw_data[1024:])
