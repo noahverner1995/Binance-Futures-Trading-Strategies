@@ -67,14 +67,16 @@ df_trading_pair["STd"] = df_trading_pair['Close Price'].rolling(lookback).std()
 df_trading_pair["Upper"] = df_trading_pair["MA"] + width*df_trading_pair['STd']
 df_trading_pair["Lower"] = df_trading_pair["MA"] - width*df_trading_pair['STd']
 
-#visualising the price
+# Visualising the price
 plt.figure(figsize=(8, 6), dpi=80)
-plt.title(f'Bollinger bands applied to the {trading_pair} trading pair')
+plt.title(f'Bollinger Bands applied to the {trading_pair} trading pair', fontsize = 12)
 plt.rc('xtick', labelsize = 8)
-plt.plot(df_trading_pair["Close Price"])
-plt.plot(df_trading_pair["MA"])
-plt.plot(df_trading_pair["Upper"])
-plt.plot(df_trading_pair["Lower"])
+plt.ylabel('Price (USDT)', fontsize=10)
+plt.plot(df_trading_pair["Close Price"], label = "Close Price")
+plt.plot(df_trading_pair["MA"], label = "Moving Average")
+plt.plot(df_trading_pair["Upper"], label = "Upper Band")
+plt.plot(df_trading_pair["Lower"], label = "Lower Band")
+plt.legend(loc='lower right', fontsize = "x-small")       
 
 
 df_trading_pair["Return"] = df_trading_pair["Close Price"].pct_change().shift(-1).fillna(0)
@@ -110,6 +112,7 @@ for t in range(0, len(df_trading_pair)):
     net = np.append(net, net_return)
     old_signal = signal
     
+# Backtesting    
 plt.figure(figsize=(8, 6), dpi=80)
 plt.title(f'Backtesting of Bollinger Bands for the {trading_pair} trading pair', fontsize = 12)
 plt.rc('xtick', labelsize = 8)
@@ -117,4 +120,4 @@ plt.ylabel('Initial Investment (USDT)', fontsize=10)
 plt.plot(df_trading_days[lookback-2:] ,np.append(100, 100*np.cumprod(1 + df_trading_pair["Return"])), label = "Buy & Hold Strategy")
 plt.plot(df_trading_days[lookback-2:] ,np.append(100, 100*np.cumprod(1 + gross)), label = "Bollinger Bands Strategy")
 plt.plot(df_trading_days[lookback-2:] ,np.append(100, 100*np.cumprod(1 + net)), label = "Bollinger Bands Strategy after fees")
-plt.legend(loc='lower right', fontsize = "x-small")
+plt.legend(loc='lower right', fontsize = "x-small")       
